@@ -1,0 +1,29 @@
+<div [hidden]="loading">
+	<mat-progress-bar mode="indeterminate"></mat-progress-bar>
+	<a class = "style_message" mat-dialog-title>Loading data, please wait...</a>
+</div>
+
+<div [hidden]="!loading">
+	
+	<table class="tg table_centered">
+	<tbody>
+	  <tr>
+		<td class="tg-de2y">{{ this.arrayInfoStation[0] }}</td>
+		<td class="tg-de2y">{{ this.arrayInfoStation[1] }}</td>
+	  </tr>
+	  <tr>
+		<td class="tg-de2y">{{ this.arrayInfoStation[2] }}</td>
+		<td class="tg-de2y">{{ this.arrayInfoStation[3] }}</td>
+	  </tr>
+	  <tr>
+		<td class="tg-de2y">{{ this.arrayInfoStation[4] }}</td>
+		<td class="tg-de2y">{{ this.arrayInfoStation[5] }}</td>
+	  </tr>
+	  <tr>
+		<td class="tg-de2y">{{ this.arrayInfoStation[6] }}</td>
+		<!-- edmo code clickable to open correspondent seadatanet project page -->
+		<td class="tg-de2y"><a href = "https://edmo.seadatanet.org/report/{{ this.arrayInfoStation[7] }}" target = "_blank">{{ this.arrayInfoStation[7] }}</a></td>
+	  </tr>
+	</tbody>
+	</table>
+</div>

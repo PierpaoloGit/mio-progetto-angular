@@ -1,0 +1,236 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "properties": {
+        "name": "DWRG1",
+        "dialog_par": [
+		  "VZMX",
+		  "VTMX",
+		  "VAVH",
+		  "VAVT",
+          "VPED",
+          "VPSP"
+        ]
+      }
+    },
+    {
+      "properties": {
+        "name": "DWRG2",
+        "dialog_par": [
+		  "VZMX",
+		  "VTMX",
+		  "VAVH",
+		  "VAVT",
+          "VPED",
+          "VPSP"
+        ]
+      }
+    },
+    {
+      "properties": {
+        "name": "DWRG3",
+        "dialog_par": [
+		  "VZMX",
+		  "VTMX",
+		  "VAVH",
+		  "VAVT",
+          "VPED",
+          "VPSP"
+        ]
+      }
+    },
+    {
+      "properties": {
+        "name": "E2M3A",
+        "dialog_par": [
+          "WDIR",
+          "WSPD",
+          "DRYT",
+          "ATMS",
+          "GSPD",
+          "GDIR",
+          "PHPH",
+          "DOX1_1",
+          "DOX1_2",
+          "PSAL_2",
+          "PSAL_3",
+          "RELH",
+          "CSLR",
+          "LWRD",
+          "PCO2_1",
+          "PCO2_2",
+          "CPWC",
+          "TUR4",
+          "CDOM",
+          "TEMP_1",
+          "TEMP_3",
+          "TEMP_4"
+        ]
+      }
+    },
+    {
+      "properties": {
+        "name": "MAMBO1",
+        "dialog_par": [
+			"WSPD",
+			"WDIR",
+			"DRYT",
+			"RELH",
+			"ATMS",
+			"ACO2",
+			"GSPD",
+			"GDIR",
+			"TEMP_1",
+			"PSAL_1",
+			"DOXY_1",
+			"PHPH_5",
+			"PHPH_1",
+			"PCO2",
+			"TEMP_3",
+			"PSAL_2",
+			"DOXY_2",
+			"PHPH_3",
+			"CPWC",
+			"TUR4",
+			"VSRW",
+			"TEMP_4",
+			"PSAL_3",
+			"DOXY_3",
+			"PHPH_4"
+        ]
+      }
+    },
+    {
+      "properties": {
+        "name": "MAMBO2",
+        "dialog_par": [
+          "WDIR",
+          "WSPD",
+          "DRYT",
+          "ATMS",
+          "GSPD",
+          "GDIR",
+          "PHPH",
+          "DOXY",
+          "TEMP",
+          "PSAL",
+          "TUR4",
+          "RELH"
+        ]
+      }
+    },
+    {
+      "properties": {
+        "name": "MAMBO3",
+        "dialog_par": [
+          "WDIR",
+          "WSPD",
+          "DRYT",
+          "ATMS",
+          "GSPD",
+          "GDIR",
+          "PHPH",
+          "DOXY",
+          "TEMP",
+          "PSAL",
+          "TUR4",
+          "RELH"
+        ]
+      }
+    },
+    {
+      "properties": {
+        "name": "MAMBO4",
+        "dialog_par": [
+          "WDIR",
+          "WSPD",
+          "DRYT",
+          "ATMS",
+          "RELH",
+          "GSPD",
+          "GDIR",
+          "SVEL",
+          "PRES",
+          "TEMP"
+        ]
+      }
+    },
+    {
+      "properties": {
+        "name": "MALO1",
+        "dialog_par": [
+			"TEMP",
+			"PSAL",
+			"DOXY",
+			"CPWC",
+			"TUR4"
+        ]
+      }
+    },
+    {
+      "properties": {
+        "name": "MALO2",
+        "dialog_par": [
+			"TEMP",
+			"PSAL",
+			"DOXY",
+			"CPWC",
+			"TUR4"
+		]
+      }
+    },    
+    {
+      "properties": {
+        "name": "MALO3",
+        "dialog_par": [
+			"TEMP",
+			"PSAL",
+			"DOXY",
+			"CPWC",
+			"TUR4"
+		]
+      }
+    },    
+    {
+      "properties": {
+        "name": "MALO4",
+        "dialog_par": [
+			"TEMP",
+			"PSAL",
+			"DOXY",
+			"CPWC",
+			"TUR4"
+		]
+      }
+    },    	
+	{
+      "properties": {
+        "name": "CURRISO",
+        "dialog_par": [
+			"RVFL",
+			"TEMP"
+        ]
+      }
+    },
+    {
+      "properties": {
+        "name": "PIEZTAG",
+        "dialog_par": [
+			"ASLV",
+			"TEMP"
+          
+        ]
+      }
+    }
+  ],
+  "totalFeatures": 10,
+  "numberMatched": 10,
+  "numberReturned": 10,
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::4326"
+    }
+  }
+}

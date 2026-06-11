@@ -1,0 +1,74 @@
+.chart {
+  float: left;
+}
+
+.series_card_desktop {
+  max-height: 400px;
+  overflow-y: auto;
+  width: 400px;
+  float: right;
+}
+
+.series_card_mobile {
+  max-height: 400px;
+  overflow-y: auto;
+  width: 400px;
+  float: left;
+}
+
+.param-section {
+  margin: 12px 0;
+}
+
+
+.param-margin {
+  margin: 0 12px;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 4px;
+}
+
+
+.desktop_font_size{
+
+	font-size:110%;
+}
+
+.mobile_font_size{
+
+	font-size:2.5vw;
+}
+
+table {
+  border-collapse: collapse; /* Unisce i bordi delle celle */
+  table-layout: fixed;
+  width: 100%;
+  text-align: left;
+ }
+
+/* Trasforma thead e tbody in elementi a blocchi */
+table thead, table tbody {
+    display: block;
+}
+
+table th {
+	border: none; /* nessun bordo */
+	font-weight: normal;
+	padding-bottom: 12px;
+	font-family: "Roboto Mono", monospace;
+	font-size: 82%;    
+	table-layout: fixed;
+ }
+ 
+table td{
+  border: 1px solid black; /* Bordo nero sottile solido */
+ }
+ 
+ table tbody {
+    height: 300px; /* Altezza fissa desiderata */
+    overflow-y: auto; /* Attiva lo scroll verticale */
+ }
+ 
+ 

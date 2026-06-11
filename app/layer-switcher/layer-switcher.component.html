@@ -1,0 +1,113 @@
+<button class="collapse-button" mat-mini-fab *ngIf="this.isCollapsed" (click)="this.isCollapsed = false">
+  <mat-icon>layers</mat-icon>
+</button>
+<mat-card class="layer-switcher" *ngIf="!this.isCollapsed">
+  <button class="close-button" mat-icon-button (click)="this.isCollapsed = true">
+    <mat-icon>close</mat-icon>
+  </button>
+  <mat-card-header>
+    <mat-card-subtitle>Layers</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngFor="let layer of layers; let i = index">
+      <ng-container *ngIf="!layer.get('base')">
+        <mat-slide-toggle type="checkbox" [checked]="layer.getVisible()" (change)="onChange($event, i)">
+          {{ layer.get('name') }}
+		  </mat-slide-toggle>
+      </ng-container>
+    </div>
+	<div id = "idActiveStationLegend" [hidden] = "!(this.erdappService.erddapStationsStatusList.length != 0)">
+		<img src="assets/green_circle.png">active real time station<br>
+		<img src="assets/red_triangle.png">inactive real time station
+	</div>
+  </mat-card-content>
+
+  <!-- SPOSTATO QUI: IL CONTENITORE COMPLETO METADATA APPARE PRIMA DEI BASE LAYERS -->
+  <mat-card-actions class="custom-dropup-container" *ngIf="showMetadata">
+    <!-- Pulsante "Metadata" aggiornato con freccia a destra e contatore -->
+    <button 
+      id="provaMenuTrigger"
+      type="button"
+      class="panel-btn-trigger"
+      aria-haspopup="true"
+      [attr.aria-expanded]="isDropupOpen"
+      (click)="toggleDropup()"
+      (keydown)="handleKeyDown($event)">
+      
+      <div class="trigger-label-container">
+        <span>Metadata</span>
+        <span class="metadata-counter" *ngIf="selectedMetadata.size > 0">
+          ({{ selectedMetadata.size }})
+        </span>
+      </div>
+
+      <mat-icon class="trigger-arrow">chevron_right</mat-icon>
+    </button>
+
+    <!-- Overlay invisibile per chiudere il menu cliccando all'esterno -->
+    <div *ngIf="isDropupOpen" class="dropup-overlay" (click)="closeDropup()"></div>
+
+    <ul 
+      *ngIf="isDropupOpen" 
+      class="dropup-menu" 
+      role="menu"
+      aria-labelledby="provaMenuTrigger"
+      (keydown)="handleKeyDown($event)">
+      
+      <!-- AZIONI GLOBALI -->
+      <li role="none">
+        <button type="button" class="dropup-item global-action-item" role="menuitem" [tabindex]="focusedItemIndex === 0 ? 0 : -1" (click)="selectItem('Select All')">
+          <div class="dropup-item-content">
+            <span>Select All</span>
+          </div>
+        </button>
+      </li>
+      <li role="none">
+        <button type="button" class="dropup-item global-action-item" role="menuitem" [tabindex]="focusedItemIndex === 1 ? 0 : -1" (click)="selectItem('Deselect All')">
+          <div class="dropup-item-content">
+            <span>Deselect All</span>
+          </div>
+        </button>
+      </li>
+      
+      <li class="menu-divider" role="separator"></li>
+
+      <!-- METADATI REALI -->
+      <li *ngFor="let item of dropupItems; let i = index" role="none">
+        <button
+          type="button"
+          class="dropup-item"
+          role="menuitem"
+          [tabindex]="focusedItemIndex === (i + 2) ? 0 : -1"
+          (click)="selectItem(item)">
+          
+          <div class="dropup-item-content">
+            <span>{{ item }}</span>
+            <mat-icon class="check-icon" *ngIf="selectedMetadata.has(item)">check</mat-icon>
+          </div>
+
+        </button>
+      </li>
+    </ul>
+  </mat-card-actions>
+
+  <!-- SEZIONE BASE LAYERS IN CODA -->
+  <ng-container *ngIf="layers.filter(isBaseLayer).length > 1">
+    <mat-card-subtitle style="padding: 0 16px;">Base layers</mat-card-subtitle>
+    <mat-card-content>
+      <mat-radio-group aria-label="Select a base layer" (change)="onChangeBaseLayer($event)">
+        <ng-container *ngFor="let layer of layers; let i = index">
+          <ng-container *ngIf="layer.get('base')">
+            <mat-radio-button
+              type="checkbox"
+              [checked]="layer.getVisible()"
+              value="{{ i }}"
+              (change)="onChangeBaseLayer($event)"
+              >{{ layer.get('name') }}</mat-radio-button
+            >
+          </ng-container>
+        </ng-container>
+      </mat-radio-group>
+    </mat-card-content>
+  </ng-container>
+</mat-card>
